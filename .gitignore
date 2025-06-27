@@ -50,3 +50,122 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Fortran module files
+*.mod
+*.smod
+
+# CMake
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles/
+CMakeScripts/
+Testing/
+# Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Build directories
+build/
+Build/
+BUILD/
+out/
+bin/
+obj/
+target/
+
+# Visual Studio Code
+.vscode/
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+# C-specific temporary files
+*.i
+*.ii
+*.s
+*.su
+*.tmp
+*.swp
+*.swo
+*~
+
+# Core dumps
+core
+core.*
+vgcore.*
+
+# GDB files
+.gdb_history
+
+# Valgrind files
+*.memcheck
+*.cachegrind
+*.callgrind
+*.massif
+*.helgrind
+*.drd
+
+# Coverage files
+*.gcov
+*.gcda
+*.gcno
+*.lcov
+coverage/
+*.coverage
+
+# Static analysis
+cppcheck-report.xml
+scan-build-*
+
+# IDE and Editor files
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Archives
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs
+*.log
+logs/
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Package manager
+node_modules/
+package-lock.json
+yarn.lock
