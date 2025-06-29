@@ -1,6 +1,8 @@
 # MNISTNeuralNet
 Simple ANN implementation from scratch in C to recognize handwritten digits from the MNIST dataset. 
 
+![Training results](https://github.com/user-attachments/assets/194b1c0e-c815-4a3e-8240-038533855951)
+
 ## Motivation
 I still have no real idea how this works or why it works, but in this experiment I at least tried to use some specific application techniques so I feel smarter than if I just wrote 10 lines with PyTorch. For this reason, I am not trying to write this document as an educational piece but rather as notes I am taking for myself. 
 
