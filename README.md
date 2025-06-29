@@ -15,7 +15,7 @@ I think enough people gloss over the details regarding neural network math while
 Each one of these concepts has such incredible complexity behind it that I think it's a disservice to describe these ideas so succinctly. But, other sources are able to describe the math better, and I have the ones I used in the references. I simply copied their approaches:
 
 ## Overview
-This model is just for experimentation: No excessive attention is paid to hyperparameters, weight/bias initialization, cost functions, activation functions, hidden layer design, splitting training set to have a validation set, regularization, etc.  I think that effort should be saved for less pedestrian beginner deep learning projects. Model typically achieves ~93% accuracy. 
+This model is just for experimentation: No excessive attention is paid to hyperparameters, weight/bias initialization, cost functions, activation functions, hidden layer design, splitting training set to have a validation set, regularization, etc.  I think that effort should be saved for less pedestrian beginner deep learning projects. Model typically achieves ~95% accuracy, but I can't comment on how the model might be overfitting.
 
 The program will parse the MNIST dataset. There is enough info online about how the MNIST set is stored, but the most notable thing is that MNIST data is big-endian while my x64 machine (as well as literally every other processor I know of) is little-endian, so my program flips the bytes. Also, this was my first time working with the FILE datatype. 
 
@@ -23,11 +23,11 @@ Weights are initialized with He uniform and biases are set to 0. The program als
 
 Input layer a[0] has 784 neurons (28x28 input) normalized between 0 and 1. 
 
-Hidden layer a[1] has 16 neurons with ReLU activation.
+Hidden layer a[1] has 128 neurons with ReLU activation (I originally used 16, which I think is a more reasonable design choice. I was bored so I kept increasing this). 
 
 Output layer a[2] has 10 neurons with softmax activation.
 
-MSE is used for cost and ANN “learns” with stochastic gradient descent (includes backpropagation), batch size of 20, learning rate 0.5, and 25 epochs. It trains pretty fast too (around 10-15 seconds with compiler optimization flags). 
+MSE is used for cost and ANN “learns” with stochastic gradient descent (includes backpropagation), batch size of 20, learning rate 0.5, and 25 epochs. It trains in ~3 minutes (thanks -Ofast). 
 
 The final model parameters are stored in a binary file. 
 

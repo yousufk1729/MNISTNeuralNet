@@ -7,6 +7,8 @@
 #include "src/ann.h"
 
 int main(void) {
+  clock_t start = clock();
+
   MNISTSample *train_data = malloc(TRAIN_SIZE * sizeof(MNISTSample));
   MNISTSample *test_data = malloc(TEST_SIZE * sizeof(MNISTSample));
   load_mnist("MNIST/train-images-idx3-ubyte", "MNIST/train-labels-idx1-ubyte",
@@ -16,7 +18,7 @@ int main(void) {
 
   NeuralNetwork nn;
   init_network(&nn);
-  // pretrained file has 92.96% accuracy using:
+  // pretrained file has 96.95%% accuracy using:
   // load_network(&nn, "model_data/pretrained.bin");
   // validate_network(&nn, test_data, TEST_SIZE);
 
@@ -26,5 +28,10 @@ int main(void) {
 
   free(train_data);
   free(test_data);
+
+  clock_t end = clock();
+  printf("CPU time elapsed: %f seconds\n",
+         ((double)(end - start)) / CLOCKS_PER_SEC);
+
   return 0;
 }

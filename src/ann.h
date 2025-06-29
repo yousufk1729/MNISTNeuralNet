@@ -8,7 +8,7 @@
 #include <time.h>
 
 #define INPUT_SIZE 784
-#define HIDDEN_SIZE 16
+#define HIDDEN_SIZE 128  // Kind of stupid, just use 16 for ~92% in 20 sec
 #define OUTPUT_SIZE 10
 #define TRAIN_SIZE 60000
 #define TEST_SIZE 10000
